@@ -21,6 +21,21 @@ body {
   line-height: 1.6;
 }
 
+#mobile-toggle {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 28px;
+  background: var(--panel2);
+  border: none;
+  color: var(--text);
+  padding: 5px 10px;
+  border-radius: 6px;
+  z-index: 1001;
+  cursor: pointer;
+}
+
 .layout {
   display: flex;
   min-height: 100vh;
@@ -31,6 +46,7 @@ body {
   background: var(--panel);
   padding: 20px;
   border-right: 1px solid var(--border);
+  transition: transform 0.3s ease;
 }
 
 .brand {
@@ -120,4 +136,37 @@ a {
 .note.warning {
   background: rgba(239, 68, 68, 0.15);
   border-color: rgba(239, 68, 68, 0.3);
+}
+
+/* Collapsible sections */
+.collapsible .collapse-content {
+  display: block;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  #mobile-toggle {
+    display: block;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    z-index: 1000;
+  }
+
+  .sidebar.show {
+    transform: translateX(0);
+  }
+
+  .layout {
+    flex-direction: column;
+  }
+
+  .content {
+    padding: 20px;
+  }
 }
