@@ -1,0 +1,123 @@
+:root {
+  --bg: #0b0f19;
+  --panel: #111827;
+  --panel2: #0f172a;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --accent: #60a5fa;
+  --border: rgba(255,255,255,0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 240px;
+  background: var(--panel);
+  padding: 20px;
+  border-right: 1px solid var(--border);
+}
+
+.brand {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.nav a:hover {
+  background: rgba(255,255,255,0.05);
+  color: white;
+}
+
+.nav a.active {
+  background: rgba(96, 165, 250, 0.15);
+  color: var(--accent);
+}
+
+.content {
+  flex: 1;
+  padding: 30px;
+}
+
+.topbar {
+  margin-bottom: 20px;
+}
+
+.topbar h1 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.topbar p {
+  color: var(--muted);
+}
+
+.card {
+  background: var(--panel2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.card h2 {
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.card ul, .card ol {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+a {
+  color: var(--accent);
+}
+
+.note {
+  padding: 12px 14px;
+  border-radius: 12px;
+  margin: 15px 0;
+  border: 1px solid var(--border);
+}
+
+.note.warning {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.3);
+}
