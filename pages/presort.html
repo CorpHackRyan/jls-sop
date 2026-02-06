@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PreSort Processing - JLS SOP</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <button id="mobile-toggle">&#9776;</button>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">JLS SOP</div>
+      <nav class="nav">
+        <a href="../index.html" class="nav-link">Home</a>
+                <a href="po_processing.html" class="nav-link">PO Processing</a>
+
+        <a href="presort.html" class="nav-link">PreSort Processing</a>
+        <a href="startup.html" class="nav-link">Startup</a>
+        <a href="shutdown.html" class="nav-link">Shutdown</a>
+        <a href="troubleshooting.html" class="nav-link">Troubleshooting</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <h1>PreSort Processing</h1>
+        <p>Complete SOP for PreSort processing on JLS machines.</p>
+      </header>
+
+      <!-- Overview -->
+      <section class="card">
+        <h2>Overview</h2>
+        <p>
+          This document outlines the complete process for mail handling, including startup,
+          operation, error handling, and shutdown of JLS postage systems. Follow each step carefully
+          and always prioritize safety when operating the machine.
+        </p>
+        <div class="note warning">
+          <strong>Warning:</strong> Always wear appropriate safety gear and do not attempt maintenance
+          while the machine is powered unless instructed.
+        </div>
+      </section>
+
+      <!-- Startup Checks -->
+      <section class="card collapsible">
+        <h2>Startup Checks</h2>
+        <div class="collapse-content">
+          <ol>
+            <li>Verify the machine area is clear of obstacles and loose material.</li>
+            <li>Ensure all safety guards are in place.</li>
+            <li>Check that the machine is connected to power and the emergency stop is disengaged.</li>
+            <li>Turn on the main machine power.</li>
+            <li>Launch the JLS PreSort software on the connected computer.</li>
+            <li>Verify the correct PreSort account and printer are selected.</li>
+            <li>Run a test print of 1 item to confirm the printer is operational.</li>
+          </ol>
+          <div class="note warning">
+            <strong>Warning:</strong> Do not start processing mail if test print fails or error lights are present.
+          </div>
+        </div>
+      </section>
+
+      <!-- Processing Workflow -->
+      <section class="card collapsible">
+        <h2>Processing Workflow</h2>
+        <div class="collapse-content">
+          <ol>
+            <li>Load mail or material into the input hopper, ensuring proper orientation.</li>
+            <li>Confirm that the mail is compatible with the selected postage type.</li>
+            <li>Set the job parameters in the software (weight, postage class, quantity).</li>
+            <li>Verify that the printer has enough ink and labels if applicable.</li>
+            <li>Start the processing job using the software interface.</li>
+            <li>Monitor the first few pieces to ensure proper printing and feeding.</li>
+            <li>Continue processing in batches, checking periodically for jams or misprints.</li>
+          </ol>
+          <div class="note warning">
+            <strong>Tip:</strong> Always process a small test batch after any configuration changes.
+          </div>
+        </div>
+      </section>
+
+      <!-- Troubleshooting / Common Errors -->
+      <section class="card collapsible">
+        <h2>Troubleshooting & Common Errors</h2>
+        <div class="collapse-content">
+          <h3>Excessive Postnet Print Errors</h3>
+          <ul>
+            <li>Error Code 0127: Too many postnet errors encountered. Check the printer head and connections.</li>
+            <li>Error .05695: Printer malfunction or paper jam. Inspect the printer and clear any jams.</li>
+            <li>Recommended Action:
+              <ol>
+                <li>Check the Postnet printer for obstructions or dirt.</li>
+                <li>Increase the allowed error rate in the software if appropriate.</li>
+                <li>Perform a test print to confirm the issue is resolved.</li>
+              </ol>
+            </li>
+          </ul>
+
+          <h3>Machine Jams</h3>
+          <ul>
+            <li>Stop the machine immediately.</li>
+            <li>Open the jam access points carefully and remove any stuck material.</li>
+            <li>Check sensors and rollers for obstructions.</li>
+            <li>Reset the machine before resuming processing.</li>
+          </ul>
+
+          <h3>Printer Errors / Ink Issues</h3>
+          <ul>
+            <li>Ensure sufficient ink or toner.</li>
+            <li>Check printer connectivity in the software.</li>
+            <li>Run a nozzle check or print test page.</li>
+          </ul>
+
+          <div class="note warning">
+            <strong>Warning:</strong> Do not bypass any safety interlocks to clear jams — always follow manufacturer procedures.
+          </div>
+        </div>
+      </section>
+
+      <!-- Shutdown -->
+      <section class="card collapsible">
+        <h2>Shutdown / End-of-Day</h2>
+        <div class="collapse-content">
+          <ol>
+            <li>Stop the current job and confirm all pieces are processed.</li>
+            <li>Remove any remaining material from input/output hoppers.</li>
+            <li>Turn off the JLS PreSort software.</li>
+            <li>Power down the machine using approved shutdown procedure.</li>
+            <li>Clean the machine area and remove any debris.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Notes / Tips -->
+      <section class="card collapsible">
+        <h2>Notes & Tips</h2>
+        <div class="collapse-content">
+          <ul>
+            <li>Run periodic test prints during long jobs to ensure consistency.</li>
+            <li>Always record error codes and resolutions for reference.</li>
+            <li>Keep consumables (ink, paper, labels) stocked to avoid interruptions.</li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>

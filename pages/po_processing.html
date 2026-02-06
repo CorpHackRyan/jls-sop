@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PostOffice Processing - JLS SOP</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <button id="mobile-toggle">&#9776;</button>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">JLS SOP</div>
+      <nav class="nav">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="po_processing.html" class="nav-link">PO Processing</a>
+        <a href="postage.html" class="nav-link">PreSort Processing</a>
+        <a href="startup.html" class="nav-link">Startup</a>
+        <a href="shutdown.html" class="nav-link">Shutdown</a>
+        <a href="troubleshooting.html" class="nav-link">Troubleshooting</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <h1>PostOffice Processing (Mail.dat Generation)</h1>
+        <p>Complete SOP for generating Mail.dat files and preparing mailings for USPS submission.</p>
+      </header>
+
+      <!-- Overview -->
+      <section class="card">
+        <h2>Overview</h2>
+        <p>
+          This SOP details all steps to generate Mail.dat files for first-class letters and flats,
+          verify reports, manage trays and pallets, upload to MD5, and coordinate with Presort EMS.
+        </p>
+        <div class="note warning">
+          <strong>Important:</strong> Mail.dat files submitted to the Postal Office expire after 30 days.
+          The postal office closes the month on the 10th of the following month. Ensure files are submitted
+          on time.
+        </div>
+      </section>
+
+      <!-- Mailer Scorecard Check -->
+      <section class="card collapsible">
+        <h2>1. Mailer Scorecard Check</h2>
+        <div class="collapse-content">
+          <ol>
+            <li>Open Postal Gateway and check the Mailer Scorecard.</li>
+            <li>Note: Departmental Presort can be performed using BCC if required.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- NetSort First Class Letters -->
+      <section class="card collapsible">
+        <h2>2. NetSort – First Class Letters</h2>
+        <div class="collapse-content">
+          <ol>
+            <li>Select <strong>First Class</strong> (top right) for yesterday’s letters.</li>
+            <li>Run <strong>Duplicate Bar Code Check</strong>.</li>
+            <li>Generate tray tags:
+              <ul>
+                <li>Select <strong>Scheme</strong> → <strong>All</strong>.</li>
+                <li>Set printer as <strong>Virtual Printer</strong>.</li>
+              </ul>
+            </li>
+            <li>Go to <strong>Reports → Report Batch</strong>:
+              <ul>
+                <li>Select yesterday’s job.</li>
+                <li>Ensure letters template matches the letters being processed.</li>
+                <li>Leave printer setting alone.</li>
+              </ul>
+            </li>
+            <li>Print the <strong>USPS Postage Summary Report</strong>:
+              <ul>
+                <li>Verify total pieces and mail types.</li>
+                <li>Metered, permit, and stamped mail for First Class (e.g., $0.25 for presort stamps).</li>
+              </ul>
+            </li>
+            <li>Export the <strong>Qualified Report</strong> and download it.</li>
+            <li>Check <strong>Customer Mail Details Report</strong> for spelling or data issues in the first column.</li>
+            <li>Container / Transfer Management:
+              <ul>
+                <li>View/Edit Trays → View Missing (confirm total trays for tags).</li>
+                <li>View/Edit Pallets → View Missing (confirm 18 pallets, print 2 copies for placards).</li>
+                <li>Click <strong>Manually Scan All</strong>.</li>
+              </ul>
+            </li>
+            <li>Mail.dat Transfer:
+              <ul>
+                <li>Move Update Method → <strong>Multiple</strong>.</li>
+                <li>Select <strong>Generate Full Service Complete Mail.dat</strong>.</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Flats Processing -->
+      <section class="card collapsible">
+        <h2>3. NetSort – First Class Flats</h2>
+        <div class="collapse-content">
+          <ol>
+            <li>Switch to <strong>First Class Flats</strong> in the top right menu.</li>
+            <li>Select <strong>Mailings → Today’s Date</strong> for flats, then click <strong>Save</strong>.</li>
+            <li>Check duplicates:
+              <ul>
+                <li>Operations → USPS Duplicate Barcode Checks → Display MID Sequence Data.</li>
+              </ul>
+            </li>
+            <li>Tray Tags:
+              <ul>
+                <li>Typically skipped unless manually required.</li>
+              </ul>
+            </li>
+            <li>Print pallet placard tags:
+              <ul>
+                <li>USPS → Container Tags → Pallet from Analysis.</li>
+                <li>8x11 format, select all, then <strong>Print</strong> → <strong>Cancel</strong> (adds placards to mail for tracking).</li>
+                <li>CSM file contains all containers.</li>
+              </ul>
+            </li>
+            <li>Reports → Mailing:
+              <ul>
+                <li>Select current flat job.</li>
+                <li>Report batch: 1st class reports (only vary for marketing mailings).</li>
+                <li>Print <strong>3600-PFCM (Metered Postage Affixed)</strong>.</li>
+                <li>Verify USPS Customer Mail Detail report:
+                  <ul>
+                    <li>Rate affixed should be $1.51.</li>
+                    <li>No misspelled client names in the profile column.</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>Container Management:
+              <ul>
+                <li>View/Edit Trays → View Missing.</li>
+                <li>View/Edit Pallets → View Missing.</li>
+                <li>Click <strong>Manually Scan All</strong>.</li>
+              </ul>
+            </li>
+            <li>Mail.dat Transfer:
+              <ul>
+                <li>Mailing → Today’s Flats</li>
+                <li>Mail Type → Tray-based First Pass</li>
+                <li>Move Update Method → Multiple</li>
+                <li>Generate Full Service Complete Mail.dat</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- MD5 Upload -->
+      <section class="card collapsible">
+        <h2>4. MD5 Upload</h2>
+        <div class="collapse-content">
+          <ol>
+            <li>Upload both Mail.dat files (letters and flats) into MD5.</li>
+            <li>While uploading, prepare the next day’s mailings in NetSort (APEX and Flexi machines).</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Reconciliation -->
+      <section class="card collapsible">
+        <h2>5. Reconciliation</h2>
+        <div class="collapse-content">
+          <ol>
+            <li>Walk over to Dan’s office for VAR reports and <strong>Permit 123.xlsx</strong> reconciliation.</li>
+            <li>Check USPS PostalOne Service Transaction History report.</li>
+            <li>Log refunds and updates in the spreadsheet to keep account balances accurate.</li>
+            <li>Move Mail.dat zip and report from USB to JLS Outbound O:\ drive for EMS consumption.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- PreSort EMS -->
+      <section class="card collapsible">
+        <h2>6. PreSort EMS Preparation</h2>
+        <div class="collapse-content">
+          <ol>
+            <li>Create mailings for tomorrow:
+              <ul>
+                <li>First Class Letters</li>
+                <li>Department of Labor & State of Rhode Island flats</li>
+              </ul>
+            </li>
+            <li>Ensure mailings match NetSort creation and barcodes generate properly.</li>
+            <li>Receive transmittal slips from Eloy and create corresponding records in EMS QC Receiving.</li>
+            <li>At 10:00 AM, Kourgas system pulls everything from hot folder into PreSort EMS.</li>
+            <li>Monitor for errors; resolve any issues before continuing mail processing.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Notes -->
+      <section class="card collapsible">
+        <h2>Notes</h2>
+        <div class="collapse-content">
+          <ul>
+            <li>150 pieces are required to reach a 5-digit mail count for processing.</li>
+            <li>Early analysis in Korber DB5 cannot be performed until sufficient pieces are loaded.</li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>
